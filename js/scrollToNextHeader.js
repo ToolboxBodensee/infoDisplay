@@ -1,7 +1,7 @@
 var headers = $('.jumbotron');
 
 headers.splice(0, 0, $('img')[0]);
-console.log(headers);
+
 var padding = $(window).height()/4;
 
 var index = 0;
