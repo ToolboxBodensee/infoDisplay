@@ -1,0 +1,37 @@
+[
+	{
+		"description": "Retro-Musik mit Floppy Laufwerken!",
+		"images":      [],
+		"name": 	   "Floppyorgel",
+		"team":		   ["Jonas Otto", "Thomas Kekeisen", "Felix Bäder", "Paul Nykiel"]	
+	},
+	{
+		"description": "Felix baut sein eigenes Ambilight mit dem Raspberry PI",
+		"images":      [],
+		"name": 	   "Ambilight",
+		"team":		   ["Felix Bäder"]	
+	},
+	{
+		"description": "Informationen zu aktuellen Projekten",
+		"images":      [],
+		"name": 	   "Infodisplay",
+		"team":		   ["Jonas Otto", "Thomas Kekeisen", "Paul Nykiel"]			
+	},
+	{
+		"description": "Michael erstellt eine Webseite zum gemeinsamen hören von YouTube Videos",
+		"images":      [],
+		"name": 	   "Hackathon Radiostation",
+		"team":		   ["Michael Malura"]			
+	},
+	{
+		"description": "Alex baut eine SatNOGS Bodenstation für die Toolbox (und sucht noch Mitstreiter).",
+		"images":      [
+			{
+				"name": "SatNOGS",
+				"url": "images/satnogs.jpg"
+			}
+		],
+		"name": 	   "SatNOGS",
+		"team":		   ["Alex"]			
+	}
+]
