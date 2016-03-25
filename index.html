@@ -1,71 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="infoDisplay">
 	<head>
 		<meta charset="utf-8">
 		<title>Info-Display</title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
-
-        <style>
-            * {cursor: none;}
-        </style>
-
 	</head>
 	<body>
-		<div style="text-align: center;">
-			<img src="toolbox_final_colour-01_1024.png" alt="Toolbox Bodensee" style="width: auto">
-		</div>
-        <br>
-        <br>
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Floppyorgel</h1>
-                <h2>Retro-Musik mit Floppy Laufwerken!</h2>
-            </div>
-            <div class="jumbotron">
-                <h1>Ambilight</h1>
-                <h2>Felix baut sein eigenes Ambilight mit dem Raspberry PI</h2>
-            </div>
-            <div class="jumbotron">
-                <h1>Infodisplay</h1>
-                <h2>Informationen zu aktuellen Projekten</h2>
-            </div>
-            <div class="jumbotron">
-                <h1>Hackathon Radiostation</h1>
-                <h2>Michael erstellt eine Webseite zum gemeinsamen hören von YouTube Videos</h2>
-            </div>
-            <div class="jumbotron">
-                <h1>Hackathon T-Shirts München 2016</h1>
-                <h2>David druckt uns T-Shirts für den Hackathon am 19.03.2016</h2>
-            </div>
-			<div class="jumbotron" style="background: color url('content/satnogs.jpg')">
-				<h1>SatNOGS</h1>
-			    <table>
-					<td>
-					<h2>Alex baut eine SatNOGS Bodenstation für die Toolbox (und sucht noch Mitstreiter).</h2>
-					</td>
-					<td>
-					<img src="content/satnogs.jpg" alt="SatNOGS Icon">
-					</td>
+        <h1 id="logo">Toolbox InfoDisplay</h1>
 
-				</table>
-            </div>
-            <div class="jumbotron">
-                <h1>Floyd!</h1>
-                <h2>Christian bastelt ein STM32F042 breakout board</h2>
+
+        <div class="container" ng-controller="DataController">
+            <div class="jumbotron" ng-repeat="entry in entries">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                ng-class="{ 'col-md-12 col-lg-12': !entry.images || entry.images.length == 0, 'col-md-8 col-lg-8': entry.images && entry.images.length > 0 }">
+                    <h1>{{ entry.name }}</h1>
+                    <h2>{{ entry.description }}</h2>
+                    <h4>
+                        <span ng-repeat="member in entry.team">{{ member }}</span>
+                    </h4>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" ng-show="entry.images && entry.images.length > 0">
+                    <ul>
+                        <li ng-repeat="image in entry.images">
+                            <img src="{{ image.url }}" alt="{{ image.name }}">
+                        <li>
+                    </ul>
+                </div>
+
             </div>
         </div>
-
 	</body>
 
 	<script>
 		setTimeout(function(){
 			location.reload();
-		},1000*60*60*3);
+		}, 1000 * 60 * 60);
 	</script>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+	<script src="js/app.js"></script>
+    <script src="js/dataController.js"></script>
+    
+
     <script src="js/scrollToNextHeader.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </html>

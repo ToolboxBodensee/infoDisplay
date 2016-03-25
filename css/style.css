@@ -1,4 +1,47 @@
+*
+{
+	cufasfrsor: none;
+}
+
 html, body
 {
     padding-bottom: 300px;
+}
+#logo
+{
+	overflow: hidden;
+	text-indent: -9999px;
+	height: 250px;
+	background: url(../images/toolbox.png) no-repeat;
+	background-position: center;
+	background-size: contain;
+	width: 80%;
+	margin: 0 auto 50px auto;
+}
+
+.jumbotron
+{
+	overflow: auto;
+}
+.jumbotron ul
+{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.jumbotron ul li
+{
+
+}
+.jumbotron ul li img
+{
+	max-width: 100%;
+}
+.jumbotron h4 span:after
+{
+	content: ", ";
+}
+.jumbotron h4 span:last-child:after
+{
+	content: "";
 }
