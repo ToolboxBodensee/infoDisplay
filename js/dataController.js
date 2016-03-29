@@ -12,11 +12,19 @@ angular.module('infoDisplay').controller('DataController', function (
 
 	$scope.loadData = function()
 	{
-		$http.get('data.json').then(function(response) {
-        	$scope.entries = response.data;                
-        });
+		var p = new Promise(function(resolve, reject)
+		{
+			$http.get('data.json').then(function(response) {
+				$scope.entries = response.data;
+				resolve();
+			});
+		});
+		return p;
 	};
 
 
-	$scope.loadData();
+	$scope.loadData().then(function()
+	{
+		initHeaders();
+	});
 });

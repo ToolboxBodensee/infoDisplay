@@ -1,6 +1,4 @@
-var headers = $('.jumbotron');
-
-headers.splice(0, 0, $('img')[0]);
+var headers = '';
 
 var padding = $(window).height()/4;
 
@@ -18,8 +16,20 @@ var next = function()
 
     index++;
 };
-
-setInterval(function()
+var scrollToNextHeader = function()
 {
-    next();
-}, 7000);
+    setInterval(function()
+    {
+        next();
+    }, 7000);
+
+};
+
+var initHeaders = function()
+{
+    headers = $('.jumbotron');
+
+    headers.splice(0, 0, $('img')[0]);
+
+    scrollToNextHeader();
+};
