@@ -2,32 +2,54 @@
 <html ng-app="infoDisplay">
 	<head>
 		<meta charset="utf-8">
-		<title>Info-Display</title>
-
+		<title>Toolbox Bodensee e.V. Info-Display</title>
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
         <h1 id="logo">Toolbox InfoDisplay</h1>
-
-        <div class="container" ng-controller="DataController">
+        <div
+            class="container"
+            ng-controller="DataController"
+        >
             <div
                 class="jumbotron"
                 ng-repeat="entry in entries"
                 ng-hide="entry.hidden"
             >
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
-                ng-class="{ 'col-md-12 col-lg-12': !entry.images || entry.images.length == 0, 'col-md-8 col-lg-8': entry.images && entry.images.length > 0 }">
+                <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                    ng-class="{
+                        'col-md-12 col-lg-12': (!entry.images || entry.images.length == 0) && (!entry.links || entry.links.length == 0),
+                        'col-md-8 col-lg-8':   ( entry.images && entry.images.length  > 0) || ( entry.links && entry.links.length  > 0)
+                    }"
+                >
                     <h1>{{ entry.name }}</h1>
                     <h2>{{ entry.description }}</h2>
                     <h4>
-                        <span ng-repeat="member in entry.team">{{ member }}</span>
+                        <span ng-repeat="member in entry.team">
+                            {{ member }}
+                        </span>
                     </h4>
                 </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" ng-show="entry.images && entry.images.length > 0">
+                <div
+                    class="col-xs-4 col-sm-4 col-md-4 col-lg-4"
+                    ng-show="entry.images && entry.images.length > 0"
+                >
                     <ul>
                         <li ng-repeat="image in entry.images">
                             <img src="{{ image.url }}" alt="{{ image.name }}">
+                        <li>
+                    </ul>
+                </div>
+                <div
+                    class="col-xs-4 col-sm-4 col-md-4 col-lg-4"
+                    ng-show="entry.links && entry.links.length > 0"
+                >
+                    <ul class="pull-right">
+                        <li ng-repeat="link in entry.links">
+                            <qrcode version="5" error-correction-level="M" size="200" data="{{ link.url }}"></qrcode>
+                            <h5>{{ link.name }}</h5>
                         <li>
                     </ul>
                 </div>
