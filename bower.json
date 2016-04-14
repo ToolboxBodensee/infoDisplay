@@ -18,6 +18,7 @@
   "dependencies": {
     "angular": "^1.5.4",
     "jquery": "^2.2.3",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "angular-qrcode": "monospaced/angular-qrcode#^6.2.1"
   }
 }
