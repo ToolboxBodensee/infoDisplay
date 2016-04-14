@@ -1,0 +1,23 @@
+{
+  "name": "InfoDisplay",
+  "homepage": "https://github.com/ToolboxBodensee/infoDisplay",
+  "authors": [
+    "Thomas Kekeisen <thomas.kekeisen@socialbit.de>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.4",
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6"
+  }
+}
