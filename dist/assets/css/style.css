@@ -5,7 +5,22 @@
 
 html, body
 {
+    padding-top: 220px;
     padding-bottom: 300px;
+}
+#header
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 250px;
+	z-index: 1337;
+	width: 100%;
+	background: #fff;
+}
+#header.with-announcement
+{
+
 }
 #logo
 {
@@ -18,7 +33,11 @@ html, body
 	width: 80%;
 	margin: 0 auto 50px auto;
 }
-
+.with-announcement #logo
+{
+	height: 100px;
+	margin-bottom: 20px;
+}
 .jumbotron
 {
 	overflow: auto;

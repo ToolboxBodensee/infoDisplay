@@ -37,6 +37,7 @@
                 ng-hide="entry.hidden"
                 ng-controller="EntryController"
                 ng-init="setEntry(currentEntry)"
+                id="{{ entry.id }}"
             >
                 <div
                     ng-class="{
@@ -91,5 +92,4 @@
     <script src="app/controller/dataController.js"></script>
     <script src="app/controller/entryController.js"></script>
     <script src="app/language/de.js"></script>
-    <script src="assets/js/scrollToNextEntry.js"></script>
 </html>
