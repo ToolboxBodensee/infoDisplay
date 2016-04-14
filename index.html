@@ -14,14 +14,15 @@
         >
             <div
                 class="jumbotron"
-                ng-repeat="entry in entries"
+                ng-repeat="currentEntry in entries"
                 ng-hide="entry.hidden"
+                ng-controller="EntryController"
+                ng-init="setEntry(currentEntry)"
             >
                 <div
-                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
                     ng-class="{
-                        'col-md-12 col-lg-12': (!entry.images || entry.images.length == 0) && (!entry.links || entry.links.length == 0),
-                        'col-md-8 col-lg-8':   ( entry.images && entry.images.length  > 0) || ( entry.links && entry.links.length  > 0)
+                        'col-xs-12 col-sm-12 col-md-12 col-lg-12': !hasSidebar(),
+                        'col-xs-8 col-sm-8 col-md-8 col-lg-8':      hasSidebar()
                     }"
                 >
                     <h1>{{ entry.name }}</h1>
@@ -34,7 +35,7 @@
                 </div>
                 <div
                     class="col-xs-4 col-sm-4 col-md-4 col-lg-4"
-                    ng-show="entry.images && entry.images.length > 0"
+                    ng-show="hasImages()"
                 >
                     <ul>
                         <li ng-repeat="image in entry.images">
@@ -44,7 +45,7 @@
                 </div>
                 <div
                     class="col-xs-4 col-sm-4 col-md-4 col-lg-4"
-                    ng-show="entry.links && entry.links.length > 0"
+                    ng-show="hasLinks()"
                 >
                     <ul class="pull-right">
                         <li ng-repeat="link in entry.links">
@@ -73,5 +74,6 @@
 
 	<script src="app/app.js"></script>
     <script src="app/controller/dataController.js"></script>
+    <script src="app/controller/entryController.js"></script>
     <script src="assets/js/scrollToNextEntry.js"></script>
 </html>
