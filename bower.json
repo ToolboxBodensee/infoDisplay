@@ -20,7 +20,8 @@
     "jquery": "^2.2.3",
     "bootstrap": "^3.3.6",
     "angular-qrcode": "monospaced/angular-qrcode#^6.2.1",
-    "angular-translate": "^2.11.0"
+    "angular-translate": "^2.11.0",
+    "csshake": "*"
   },
   "devDependencies": {
     "angular-translate": "^2.11.0"
