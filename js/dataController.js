@@ -14,7 +14,7 @@ angular.module('infoDisplay').controller('DataController', function (
 	{
 		var p = new Promise(function(resolve, reject)
 		{
-			$http.get('data.json').then(function(response) {
+			$http.get('data/data.json').then(function(response) {
 				$scope.entries = response.data;
 				resolve();
 			});

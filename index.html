@@ -11,7 +11,11 @@
         <h1 id="logo">Toolbox InfoDisplay</h1>
 
         <div class="container" ng-controller="DataController">
-            <div class="jumbotron" ng-repeat="entry in entries">
+            <div
+                class="jumbotron"
+                ng-repeat="entry in entries"
+                ng-hide="entry.hidden"
+            >
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
                 ng-class="{ 'col-md-12 col-lg-12': !entry.images || entry.images.length == 0, 'col-md-8 col-lg-8': entry.images && entry.images.length > 0 }">
                     <h1>{{ entry.name }}</h1>
