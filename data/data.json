@@ -56,7 +56,7 @@
 		"images":      [
 			{
 				"name": "SatNOGS",
-				"url": "images/satnogs.jpg"
+				"url": "data/images/satnogs.jpg"
 			}
 		],
         "links":       [
