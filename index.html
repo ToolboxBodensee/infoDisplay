@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="assets/css/style.css">
 	</head>
 	<body ng-controller="BodyController">
-        <h1 id="logo">Toolbox InfoDisplay</h1>
+        <h1 id="logo">{{ 'APP_TITLE' | translate }}</h1>
         <div
             class="container"
             ng-controller="DataController"
@@ -54,22 +54,22 @@
                         <li>
                     </ul>
                 </div>
-
             </div>
         </div>
 	</body>
 
-
 	<script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-qrcode/angular-qrcode.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/qrcode-generator/js/qrcode.js"></script>
-    <script src="bower_components/angular-qrcode/angular-qrcode.js"></script>
-
 
 	<script src="app/app.js"></script>
+    <script src="app/config/language.js"></script>
     <script src="app/controller/bodyController.js"></script>
     <script src="app/controller/dataController.js"></script>
     <script src="app/controller/entryController.js"></script>
+    <script src="app/language/de.js"></script>
     <script src="assets/js/scrollToNextEntry.js"></script>
 </html>
