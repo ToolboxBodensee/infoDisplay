@@ -1,0 +1,83 @@
+[
+	{
+		"description": "Retro-Musik mit Floppy Laufwerken!",
+		"hidden":      false,
+		"images":      [
+
+        ],
+        "links":       [
+
+        ],
+		"name": 	   "Floppyorgel",
+		"team":		   ["Jonas Otto", "Thomas Kekeisen", "Felix Bäder", "Paul Nykiel"]	
+	},
+	{
+		"description": "Felix baut sein eigenes Ambilight mit dem Raspberry PI",
+		"hidden":      false,
+		"images":      [
+
+        ],
+        "links":       [
+
+        ],
+		"name": 	   "Ambilight",
+		"team":		   ["Felix Bäder"]	
+	},
+	{
+		"description": "Informationen zu aktuellen Projekten",
+		"hidden":      false,
+		"images":      [
+
+        ],
+        "links":       [
+            {
+                "name": "GitHub-Repo",
+                "url":  "https://github.com/ToolboxBodensee/infoDisplay"
+            }
+        ],
+		"name": 	   "Infodisplay",
+		"team":		   ["Jonas Otto", "Thomas Kekeisen", "Paul Nykiel"]			
+	},
+	{
+		"description": "Michael erstellt eine Webseite zum gemeinsamen hören von YouTube Videos",
+		"hidden":      false,
+		"images":      [
+
+        ],
+        "links":       [
+
+        ],
+		"name": 	   "Hackathon Radiostation",
+		"team":		   ["Michael Malura"]			
+	},
+	{
+		"description": "Alex baut eine SatNOGS Bodenstation für die Toolbox (und sucht noch Mitstreiter).",
+		"hidden":      false,
+		"images":      [
+			{
+				"name": "SatNOGS",
+				"url": "data/images/satnogs.jpg"
+			}
+		],
+        "links":       [
+
+        ],
+		"name": 	   "SatNOGS",
+		"team":		   ["Alex"]			
+	},
+	{
+		"description": "Christian baut ein STM32F042 Breakout Board mit Micro USB Connector und TSSOP20 Package",
+		"hidden":      false,
+		"images":      [
+
+		],
+        "links":       [
+            {
+                "name": "GitHub-Repo",
+                "url":  "https://github.com/graugans/floyd"
+            }
+        ],
+		"name": 	   "Floyd",
+		"team":		   ["Chistian"]
+	}
+]

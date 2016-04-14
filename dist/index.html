@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="infoDisplay">
+	<head>
+		<meta charset="utf-8">
+		<title>Toolbox Bodensee e.V. Info-Display</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body ng-controller="BodyController">
+        <h1 id="logo">{{ 'APP_TITLE' | translate }}</h1>
+        <div
+            class="container"
+            ng-controller="DataController"
+        >
+            <div
+                class="jumbotron"
+                ng-repeat="currentEntry in entries"
+                ng-hide="entry.hidden"
+                ng-controller="EntryController"
+                ng-init="setEntry(currentEntry)"
+            >
+                <div
+                    ng-class="{
+                        'col-xs-12 col-sm-12 col-md-12 col-lg-12': !hasSidebar(),
+                        'col-xs-8 col-sm-8 col-md-8 col-lg-8':      hasSidebar()
+                    }"
+                >
+                    <h1>{{ entry.name }}</h1>
+                    <h2>{{ entry.description }}</h2>
+                    <h4>
+                        <span ng-repeat="member in entry.team">
+                            {{ member }}
+                        </span>
+                    </h4>
+                </div>
+                <div
+                    class="col-xs-4 col-sm-4 col-md-4 col-lg-4"
+                    ng-show="hasImages()"
+                >
+                    <ul>
+                        <li ng-repeat="image in entry.images">
+                            <img src="{{ image.url }}" alt="{{ image.name }}">
+                        <li>
+                    </ul>
+                </div>
+                <div
+                    class="col-xs-4 col-sm-4 col-md-4 col-lg-4"
+                    ng-show="hasLinks()"
+                >
+                    <ul class="pull-right">
+                        <li ng-repeat="link in entry.links">
+                            <qrcode version="5" error-correction-level="M" size="200" data="{{ link.url }}"></qrcode>
+                            <h5>{{ link.name }}</h5>
+                        <li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</body>
+
+	<script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-qrcode/angular-qrcode.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/qrcode-generator/js/qrcode.js"></script>
+
+	<script src="app/app.js"></script>
+    <script src="app/config/language.js"></script>
+    <script src="app/controller/bodyController.js"></script>
+    <script src="app/controller/dataController.js"></script>
+    <script src="app/controller/entryController.js"></script>
+    <script src="app/language/de.js"></script>
+    <script src="assets/js/scrollToNextEntry.js"></script>
+</html>
