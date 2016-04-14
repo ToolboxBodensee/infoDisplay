@@ -1,27 +1,27 @@
-/* global app */
-angular.module('infoDisplay').controller('DataController', function (
-      $log
-    , $http
+app.controller('DataController', function (
+	  $http
+    , $log
+    , $q
     , $rootScope
     , $scope
 )
 {
 	$scope.entries = [];
 
-	$scope.entries = [1, 2, 3];
-
 	$scope.loadData = function()
 	{
-		var p = new Promise(function(resolve, reject)
+		return $q(function(resolve, reject)
 		{
 			$http.get('data/data.json').then(function(response) {
 				$scope.entries = response.data;
+
 				resolve();
+			}, function ()
+			{
+				reject();
 			});
 		});
-		return p;
 	};
-
 
 	$scope.loadData().then(function()
 	{
