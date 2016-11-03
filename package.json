@@ -1,0 +1,24 @@
+{
+  "name": "infodisplay",
+  "version": "1.0.0",
+  "description": "This is the source code of our info monitor that is mounted in our club house. Feel free to fork this repository to add your own projects. Place a pull-request when you think you are done and please, add new, cool features!",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "concurrent-transform": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToolboxBodensee/infoDisplay.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ToolboxBodensee/infoDisplay/issues"
+  },
+  "homepage": "https://github.com/ToolboxBodensee/infoDisplay#readme"
+}
