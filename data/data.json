@@ -79,5 +79,17 @@
         ],
 		"name": 	   "Floyd",
 		"team":		   ["Chistian"]
+	},
+	{
+		"description": "Wir bauen Racing Quadcopter!",
+		"hidden":      false,
+		"images":      [
+
+        ],
+        "links":       [
+
+        ],
+		"name": 	   "Racing Drohnen",
+		"team":		   ["Jonas Otto", "Matthias Flock"]	
 	}
 ]
